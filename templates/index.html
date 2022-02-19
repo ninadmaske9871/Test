@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html overflow="scroll">
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<!--<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+  <style>
+      html, body {
+      min-height: 50%;
+      }
+      body, div, form, input, select, textarea, label { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+    </style>
+</head>
+
+<body >
+ <div class="login">
+	<h1>Predict Customer Order Return</h1>
+	
+	<form action="{{ url_for('predict')}}"method="post">
+	
+	<table border="0" cellpadding="1" cellspacing="1" style="width:500px">
+	<tbody>
+	
+	     <tr>
+	        <td>item_id</td>
+			<td><input type="text" name="item_id"  required="required" /></td>
+		</tr>
+		 <tr>
+	        <td>item_color</td>
+			<td><input type="text" name="item_color"  required="required" /></td>
+		</tr>
+		 <tr>
+	        <td>brand_id</td>
+			<td><input type="text" name="brand_id"  required="required" /></td>
+		</tr>
+		 <tr>
+	        <td>item_price</td>
+			<td><input type="text" name="item_price"  required="required" /></td>
+		</tr>
+		 <tr>
+	        <td>user_id</td>
+			<td><input type="text" name="user_id"  required="required" /></td>
+		</tr>
+		<tr>
+	        <td>user_title</td>
+			<td><input type="text" name="user_title"  required="required" /></td>
+		</tr>
+		<tr>
+	        <td>user_state</td>
+			<td><input type="text" name="user_state"  required="required" /></td>
+		</tr>
+		<tr>
+	        <td>New_Old_User</td>
+			<td><input type="text" name="New_Old_User"  required="required" /></td>
+		</tr>
+		<tr>
+	        <td>Age</td>
+			<td><input type="text" name="Age"  required="required" /></td>
+		</tr>
+		<tr>
+	        <td>order_month</td>
+			<td><input type="text" name="order_month"  required="required" /></td>
+		</tr>
+		<tr>
+	        <td>delivery_time</td>
+			<td><input type="text" name="delivery_time"  required="required" /></td>
+		</tr>
+		<tr>
+	        <td>item_size_standardised</td>
+			<td><input type="text" name="item_size_standardised"  required="required" /></td>
+		</tr>
+
+		
+	</tbody>
+</table>
+
+        
+     
+
+  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+ 
+
+   <br>
+   
+   {{ prediction_text }}
+</br>
+ </div>
+
+
+</body>
+</html>
